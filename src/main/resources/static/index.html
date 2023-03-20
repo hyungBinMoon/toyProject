@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  .login-container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #888888;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  input[type="text"], input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px #888888;
+  }
+
+  button[type="submit"]{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+
+  div[id="naver_id_login"] {
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+<div class="login-container">
+  <h1>Login</h1>
+  <form>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+
+    <!-- 네이버 로그인 버튼 노출 영역 -->
+    <div style="margin:auto" id="naver_id_login"></div>
+    <!-- //네이버 로그인 버튼 노출 영역 -->
+  </form>
+</div>
+  <!-- 네이버 개발자센터 페이지 API 관리 -->
+  <!-- https://developers.naver.com/main/ -->
+<script type="text/javascript">
+  	var naver_id_login = new naver_id_login("mQCohkohUlg9QwHagKHA", "http://localhost:8080/naverLogin.html");
+	naver_id_login.setButton("white", 1,40); //네이버 로그인 버튼 설정
+	naver_id_login.init_naver_id_login();
+</script>
+</body>
+</html>
