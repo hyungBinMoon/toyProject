@@ -65,6 +65,18 @@
   div[id="naver_id_login"] {
     padding: 10px;
   }
+
+  .join {
+    margin-top : 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
   </style>
 </head>
 <body>
@@ -76,6 +88,7 @@
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
     <button type="submit">Login</button>
+    <button class="join" onclick="location.href='/hello'">Join</button>
 
     <!-- 네이버 로그인 버튼 노출 영역 -->
     <div style="margin:auto" id="naver_id_login"></div>
